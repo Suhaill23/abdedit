@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'IBM Plex Sans Arabic';
+    src: url('./assets/IBM.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --color-primary: #010212;
+    --color-secondary: #2d1b4e;
+    --color-accent-blue: #667eea;
+    --color-accent-pink: #f093fb;
+    --color-accent-red: #f5576c;
+    --brand-blue: #3A29FF;
+    --brand-cyan: #2DECEE;
+    --brand-green: #01efac;
+    --brand-teal: #2082a6;
+}
+
+@layer utilities {
+    .bg-brand-gradient {
+        background: linear-gradient(135deg, var(--brand-blue), var(--brand-cyan), var(--brand-green));
+    }
+
+    .text-brand-gradient {
+        background: linear-gradient(135deg, var(--brand-blue), var(--brand-cyan), var(--brand-green));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        display: inline-block;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: var(--color-primary);
+        color: white;
+        overflow-x: hidden;
+        font-family: 'Cairo', 'IBM Plex Sans Arabic', sans-serif;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4a3b6e;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-blue);
+}
